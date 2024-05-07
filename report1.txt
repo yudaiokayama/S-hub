@@ -1,5 +1,0 @@
-Github is one of the version control systems
-GitHub is still very USEFUL system.
-
-lesson ブランチでこの変更を行いました
-mainブランチでこの変更を行いました
