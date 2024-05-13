@@ -47,19 +47,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux'; // 追加
-import store from './Redux/store'; // あなたのReduxストアのインポート
+import { Provider } from 'react-redux';
+import store from './Redux/store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}> {/* 追加 */}
+    <Provider store={store}>
+      <BrowserRouter>
         <App />
-      </Provider> {/* 追加 */}
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
+

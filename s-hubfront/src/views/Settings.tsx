@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './css/Settings.css';
 
 const Settings: React.FC = () => {
@@ -16,10 +17,20 @@ const Settings: React.FC = () => {
     huggingface: '',
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // フォームのデータを保存する処理を追加
-    // 例えば、LocalStorageやバックエンドAPIにデータを送信するなど
+    try {
+      // フォームの入力値をバックエンドのAPIに送信する
+      await axios.post('/api/settings', {
+        profileImg,
+        profileName,
+        // 他の入力値も追加
+      });
+      alert('Settings saved successfully!');
+    } catch (error) {
+      console.error('Error saving settings:', error);
+      alert('Failed to save settings. Please try again later.');
+    }
   };
 
   return (

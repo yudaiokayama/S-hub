@@ -4,6 +4,8 @@ import './Mypage.css';
 import AtsushiFormal from "../img/AtsushiFormal.png";
 import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
+import Header from '../views/Header';
+import Nav from '../views/Nav';
 
 // SNSロゴ素材はinstagramのもので代用,iタグ使うという案もある
 import instagramlogo from "../img/instagramlogo.png";
@@ -22,27 +24,33 @@ const FormalPage: React.FC = () => {
   return (
     <div className="page formal">
       {/* ページのコンテンツ */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
-      <header>
-        <h1>My Page: <span>Formal</span></h1>
-        <div className="s-hub">S-Hub</div>
-      </header>
+      <Header />
       <div className="profile">
         <div className="profile_image">
-          <img src={profileImg} alt="Formal Profile" />
+          <img src={AtsushiFormal} alt="Formal Profile" />
+          {/* 今はそれっぽく見えるようにあつしの画像を入れてるけど、バックエンドAPIと通信できたら{}の中身を{profileImg}に変更してほしい */}
         </div>
         <div className = "profile_contents">
           <div className = "profile_name">
             <h2>{profileName}</h2>
+            <h2>Atsushi Okamoto</h2> {/*消去*/}
           </div>
           <div className = "profile_text">
             <p>{profileText}</p>
+            <p>Kyoto University<br></br>Social Informatics Course</p>{/*消去*/}
           </div>
         </div>
       </div>
       <div className="Bio">
         <h5>Bio</h5>
         <p>{bio}</p>
+        <p>FormalBioFormalBioFormalBioFormalBio
+          FormalBioFormalBioFormalBioFormalBioFormalBioForm
+          alBioFormalBioFormalBioFormalBioFormalBioFormalBio
+          FormalBioFormalBioFormalBioFormalBioFormalBioForma
+          lBioFormalBioFormalBioFormalBio FormalBioFormalBio
+          FormalBioFormalBioFormalBioForm
+        </p> {/*消去*/}
       </div>
       <div className="contact">
         <a href={`tel:${phone}`}>
@@ -55,11 +63,29 @@ const FormalPage: React.FC = () => {
         </a>
       </div>
       <div className = "links">
-        {/* <div className = "link">
+        {/* ↓ここの4つのdivタグはmypage画面をそれっぽく見せるためだけ、後で消去する */}
+        <div className = "link">
           <a href="https://www.instagram.com/formal">
           <img src={instagramlogo}></img>
           </a>
-        </div> */}
+        </div> 
+        <div className = "link">
+          <a href="https://www.instagram.com/formal">
+          <img src={instagramlogo}></img>
+          </a>
+        </div> 
+        <div className = "link">
+          <a href="https://www.instagram.com/formal">
+          <img src={instagramlogo}></img>
+          </a>
+        </div> 
+        <div className = "link">
+          <a href="https://www.instagram.com/formal">
+          <img src={instagramlogo}></img>
+          </a>
+        </div> 
+        {/* ↑ここまで */}
+
         {Object.entries(socialLinks).map(([platform, url]) => {
           if (url) {
             return (
@@ -74,12 +100,7 @@ const FormalPage: React.FC = () => {
         })}
 
       </div>
-      <nav>
-        <button className = "MypagesButton" onClick={() => navigate('/mypages')}>My Page</button>
-        <button className = "SearchButton" onClick={() => navigate('/search')}>Search</button>
-        <button className = "NetworkButton" onClick={() => navigate('/network')}>Network</button>
-        <button className = "SettingsButton" onClick={() => navigate('/settings')}>Settings</button>
-      </nav>
+      <Nav />
     </div>
   );
 };

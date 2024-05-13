@@ -1,4 +1,4 @@
-// PageForm.tsx
+// PageForm.tsx このファイルはGPTが言ってくれたから作ったけど、機能はしてないかも
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

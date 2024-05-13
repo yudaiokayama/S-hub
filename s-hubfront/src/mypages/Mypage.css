@@ -11,28 +11,6 @@
     overflow: hidden;
   }
   
-  .page header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    color: #ffffff;
-  }
-  
-  .page header h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .page header .s-hub {
-    background-color: #ffffff;
-    color: #333333;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: bold;
-  }
   
   .page .profile {
     width: 80%;
@@ -152,74 +130,16 @@
     text-decoration: none;
   }
   
-  .formal header {
-    background-color: #3f51b5;
+  .formal header h1 span{
+    background-color: blue;
   }
   
-  .casual header {
-    background-color: #ffeb3b;
+  .casual header h1 span{
+    background-color: orange;
+
   }
   
   .casual header h1 {
     color: #333333;
   }
 
-
-nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #ffffff;
-  padding: 10px;
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-}
-
-nav button {
-  font-size: 18px;
-  color: #333333;
-  text-decoration: none;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-}
-
-nav button:hover {
-  color: #000000;
-  background-color: #f5f5f5;
-}
-
-.MypagesButton,
-.SearchButton,
-.NetworkButton,
-.SettingsButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.MypagesButton::before,
-.SearchButton::before,
-.NetworkButton::before,
-.SettingsButton::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-.MypagesButton::before {
-  content: "\f007";
-}
-
-.SearchButton::before {
-  content: "\f002";
-}
-
-.NetworkButton::before {
-  content: "\f0c0";
-}
-
-.SettingsButton::before {
-  content: "\f013";
-}
