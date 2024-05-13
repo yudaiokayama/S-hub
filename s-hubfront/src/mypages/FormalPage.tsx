@@ -1,8 +1,9 @@
-// FormalPage.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Mypage.css';
 import AtsushiFormal from "../img/AtsushiFormal.png";
+import { useSelector } from 'react-redux';
+import { RootState } from '../Redux/store';
 
 // SNSロゴ素材はinstagramのもので代用,iタグ使うという案もある
 import instagramlogo from "../img/instagramlogo.png";
@@ -15,6 +16,9 @@ import huggingfacelogo from "../img/instagramlogo.png";
 
 const FormalPage: React.FC = () => {
   const navigate = useNavigate();
+  const { profileImg, profileName, profileText, bio, phone, email, socialLinks } = useSelector(
+    (state: RootState) => state.settings
+  );
   return (
     <div className="page formal">
       {/* ページのコンテンツ */}
@@ -25,56 +29,50 @@ const FormalPage: React.FC = () => {
       </header>
       <div className="profile">
         <div className="profile_image">
-          <img src={AtsushiFormal} alt="Formal Profile" />
+          <img src={profileImg} alt="Formal Profile" />
         </div>
         <div className = "profile_contents">
           <div className = "profile_name">
-            <h2>Atsushi Okamoto</h2>
+            <h2>{profileName}</h2>
           </div>
           <div className = "profile_text">
-            <p>Kyoto University</p>
-            <p>Social Informatics Course</p>
+            <p>{profileText}</p>
           </div>
         </div>
       </div>
       <div className="Bio">
         <h5>Bio</h5>
-        <p>
-            FormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBioFormalBio
-        </p>
+        <p>{bio}</p>
       </div>
       <div className="contact">
-        <a href="tel:+819012345678">
+        <a href={`tel:${phone}`}>
           <i className="fa fa-phone"></i>
           +81 90-1234-5678
         </a>
-        <a href="mailto:formal@example.com">
+        <a href={`mailto:${email}`}>
           <i className="fa fa-envelope"></i>
           formal@example.com
         </a>
       </div>
       <div className = "links">
-        <div className = "link">
-          <a href="https://www.instagram.com/formal">
-          <img src={instagramlogo}></img>
-          {/* <i className="fab fa-facebook"></i> */}
-          </a>
-        </div>
-        <div className = "link">
+        {/* <div className = "link">
           <a href="https://www.instagram.com/formal">
           <img src={instagramlogo}></img>
           </a>
-        </div>
-        <div className = "link">
-          <a href="https://www.instagram.com/formal">
-          <img src={instagramlogo}></img>
-          </a>
-        </div>
-        <div className = "link">
-          <a href="https://www.instagram.com/formal">
-          <img src={instagramlogo}></img>
-          </a>
-        </div>
+        </div> */}
+        {Object.entries(socialLinks).map(([platform, url]) => {
+          if (url) {
+            return (
+              <div key={platform} className="link">
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <img src={`/${platform}logo.png`} alt={`${platform} logo`} />
+                </a>
+              </div>
+            );
+          }
+          return null;
+        })}
+
       </div>
       <nav>
         <button className = "MypagesButton" onClick={() => navigate('/mypages')}>My Page</button>
