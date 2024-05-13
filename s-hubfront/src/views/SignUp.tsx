@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SignUp.css';
+import './css/SignUp.css';
 import sublogo from "../img/sublogo.svg";
 
 const SignUp: React.FC = () => {

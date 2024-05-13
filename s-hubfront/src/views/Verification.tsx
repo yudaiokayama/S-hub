@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Verification.css';
+import './css/Verification.css';
 
 const Verification: React.FC = () => {
   const navigate = useNavigate();

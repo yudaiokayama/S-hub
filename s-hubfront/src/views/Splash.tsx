@@ -1,5 +1,5 @@
 import React from 'react';
-import './Splash.css';
+import './css/Splash.css';
 import mainlogo from "../img/mainlogo.svg";
 
 const Splash: React.FC = () => {

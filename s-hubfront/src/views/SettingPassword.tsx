@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './SettingPassword.css';
+import './css/SettingPassword.css';
 
 const SettingPassword: React.FC = () => {
   const navigate = useNavigate();
