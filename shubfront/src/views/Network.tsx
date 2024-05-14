@@ -1,16 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/network.css';
+import Header from './Header';
+import Nav from './Nav';
 
 const Network: React.FC = () => {
   const navigate = useNavigate();
   return (
     <div className="network">
       <body>
-        <header>
-          <div className="header-left">Network</div>
-          <div className="header-right">S-Hub</div>
-        </header>
+        <Header title="network" />
         <main>
           <div className="user-list">
             <div className="user-item">
@@ -35,12 +34,7 @@ const Network: React.FC = () => {
             </div>
           </div>
         </main>
-        <footer>
-          <div className="footer-item">My Page</div>
-          <div className="footer-item">Search</div>
-          <div className="footer-item">Network</div>
-          <div className="footer-item">Settings</div>
-        </footer>
+        <Nav />
       </body>
     </div>
   );

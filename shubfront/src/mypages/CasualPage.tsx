@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
 import MypageHeader from '../views/MypageHeader';
 import Nav from '../views/Nav';
+import QRButton from '../components/QR_button';
 
 const CasualPage: React.FC = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const CasualPage: React.FC = () => {
   return (
     <div className="page casual">
       {/* ページのコンテンツ */}
-      <MypageHeader title="Casual" />
+      <MypageHeader mode="Casual" />
       <div className="profile">
         <div className="profile_image">
           <img src={AtsushiCasual} alt="Casual Profile" />
@@ -62,6 +63,7 @@ const CasualPage: React.FC = () => {
           return null;
         })}
       </div>
+      <QRButton mode="Casual" />
       <Nav />
     </div>
   );

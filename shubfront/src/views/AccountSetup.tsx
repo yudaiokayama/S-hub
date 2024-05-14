@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/AccountSetup.css';
-import MypageHeader from './MypageHeader'; // 修正
+import Header from './Header'; // 修正
 import Button from './Button';
 
 const AccountSetup: React.FC = () => {
@@ -9,7 +9,7 @@ const AccountSetup: React.FC = () => {
 
   return (
     <div className="account-setup">
-      <MypageHeader title="Account Setup" /> {/* 修正 */}
+      <Header title="Account Setup" /> {/* 修正 */}
       <div className="form-group">
         <label htmlFor="photo">Photo</label>
         <input type="file" id="photo" />
