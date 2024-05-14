@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
-from auth import get_users_from_csv
+from .auth import get_users_from_csv
 
 class LoginView(APIView):
     def post(self, request):
