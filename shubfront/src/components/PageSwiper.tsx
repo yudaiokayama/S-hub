@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import FormalPage from '../mypages/FormalPage';
 import CasualPage from '../mypages/CasualPage';
-import QR_show from './QR_show';
+import QR_show from '../views/QR_show';
 
 const PageSwiper: React.FC = () => {
  const [pages, setPages] = useState([

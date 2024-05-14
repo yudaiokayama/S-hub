@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import '../mypages/Mypage.css';
+import './css/QR_show.css';
+import Header from './Header';
+import Nav from './Nav';
 
 const QR_show: React.FC = () => {
   const location = useLocation();
@@ -25,10 +27,13 @@ const QR_show: React.FC = () => {
 
   return (
     <div className="qr-page">
+      <Header title="QRcode" />
+      <h1>QRcode</h1>
       <h1>{mode === 'Formal' ? 'Formal' : 'Casual'}</h1>
       {qrCodeUrl && <img src={qrCodeUrl} alt="QR Code" className="qr-code" />}
       <button className="scan-button">QRコード読み取り</button>
       <button className="back-button" onClick={() => navigate(-1)}>Back</button>
+      <Nav />
     </div>
   );
 };

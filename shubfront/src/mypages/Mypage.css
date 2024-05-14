@@ -165,36 +165,5 @@
     cursor: pointer;
   }
   
-  .qr-page {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .qr-page h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .qr-code {
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
-  }
-  
-  .scan-button, .back-button {
-    display: block;
-    width: 200px;
-    padding: 10px;
-    margin: 10px auto;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .back-button {
-    background-color: #f44336;
-  }
+ 
   
