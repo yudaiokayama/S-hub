@@ -7,10 +7,10 @@ from .models import Profile
 from collections import OrderedDict
 import csv
 
-class ExportProfilesView(APIView):
-    def get(self, request, *args, **kwargs):
-        filename = 'profiles.csv'
-        fieldnames = ['username', 'bio']
+# class ExportProfilesView(APIView):
+#     def get(self, request, *args, **kwargs):
+#         filename = 'profiles.csv'
+#         fieldnames = ['username', 'bio']
 #class ExportProfilesView(APIView):
 #    def get(self, request, *args, **kwargs):
 #        filename = request.query_params.get('filename', 'profiles.csv')
@@ -21,19 +21,19 @@ class ExportProfilesView(APIView):
     #
         # ファイル存在チェックと開き方の処理(前と同じ)
         
-        with open(filename, 'a', newline='') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        # with open(filename, 'a', newline='') as csvfile:
+        #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             
-            if not file_exists:
-                writer.writeheader()
+        #     if not file_exists:
+        #         writer.writeheader()
                 
-            for profile in Profile.objects.all():
-                writer.writerow({
-                    'username': profile.username,
-                    'bio': profile.bio
-                })
+        #     for profile in Profile.objects.all():
+        #         writer.writerow({
+        #             'username': profile.username,
+        #             'bio': profile.bio
+        #         })
                 
-        return Response({'message': 'Profiles exported successfully'})
+        # return Response({'message': 'Profiles exported successfully'})
 
 class SettingsView(APIView):
     def post(self, request):

@@ -41,8 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'log',
     'main',
-    'react_app'
+    'shubfront',
+    'rest_framework_simplejwt',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
