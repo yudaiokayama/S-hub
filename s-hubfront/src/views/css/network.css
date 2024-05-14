@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-left {
+    font-size: 1.2em;
+}
+
+.header-right {
+    font-size: 1.2em;
+    color: #000080;
+}
+
+main {
+    padding: 20px;
+}
+
+.user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-icon::before {
+    content: "\1F464";
+    font-size: 2em;
+}
+
+.user-name {
+    font-size: 1.2em;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ccc;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer-item {
+    text-align: center;
+}
+
+.footer-item::before {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.footer-item:nth-child(1)::before {
+    content: "\1F464";
+    /* My Page icon */
+}
+
+.footer-item:nth-child(2)::before {
+    content: "\1F50D";
+    /* Search icon */
+}
+
+.footer-item:nth-child(3)::before {
+    content: "\1F465";
+    /* Network icon */
+}
+
+.footer-item:nth-child(4)::before {
+    content: "\2699";
+    /* Settings icon */
+}
