@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './css/Settings.css';
+import Header from './Header';
+import Nav from './Nav';
+
+// 一意なユーザーIDを生成する関数
+const generateUserId = () => {
+  return 'user_' + Math.random().toString(36).substr(2, 9);
+};
 
 const Settings: React.FC = () => {
   const [profileImg, setProfileImg] = useState('');
@@ -19,12 +26,18 @@ const Settings: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const userId = generateUserId(); // ユーザーIDを生成
     try {
       // フォームの入力値をバックエンドのAPIに送信する
       await axios.post('/api/settings', {
+        userId, // ユーザーIDを含める
         profileImg,
         profileName,
-        // 他の入力値も追加
+        profileText,
+        bio,
+        phone,
+        email,
+        socialLinks,
       });
       alert('Settings saved successfully!');
     } catch (error) {
@@ -35,7 +48,7 @@ const Settings: React.FC = () => {
 
   return (
     <div className="settings">
-      <h2>Settings</h2>
+      <Header title ="setting" />
       <form onSubmit={handleSubmit}>
         <label>
           Profile Image:
@@ -102,8 +115,9 @@ const Settings: React.FC = () => {
             onChange={(e) => setSocialLinks({ ...socialLinks, huggingface: e.target.value })}
           />
         </label>
-        <button type="submit">Save</button>
+        <button type="submit" className = "settingsButton">Save</button>
       </form>
+      <Nav />
     </div>
   );
 };
