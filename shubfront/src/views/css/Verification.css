@@ -46,12 +46,4 @@
     cursor: pointer;
   }
   
-  button:first-child {
-    background-color: #ccc;
-    color: #333;
-  }
-  
-  button:last-child {
-    background-color: #007bff;
-    color: #fff;
-  }
+

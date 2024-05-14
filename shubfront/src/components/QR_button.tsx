@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../mypages/Mypage.css';
 
 interface QRButtonProps {
   mode: 'Formal' | 'Casual';

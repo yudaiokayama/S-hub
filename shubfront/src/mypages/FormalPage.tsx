@@ -101,7 +101,9 @@ const FormalPage: React.FC = () => {
           }
           return null;
         })}
-      <QRButton mode="Formal" />
+      </div>
+      <div className="QRbutton">
+        <QRButton mode="Formal" />
       </div>
       <Nav />
     </div>
