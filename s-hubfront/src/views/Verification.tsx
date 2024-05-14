@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/Verification.css';
-import Header from '../views/Header';
+import Header from './Header';
 import Button from './Button';
 
 const Verification: React.FC = () => {
@@ -23,3 +23,5 @@ const Verification: React.FC = () => {
 };
 
 export default Verification;
+
+//memo 
