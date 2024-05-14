@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     #'api.apps.SnsApiConfig',    #API用のアプリディレクトリ
     'rest_framework',
     'log',
-    'main'
+    'main',
     'react_app'
 ]
 
