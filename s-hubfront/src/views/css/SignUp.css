@@ -1,0 +1,45 @@
+/* SignUp.css */
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  min-height: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sign-up img{
+  width: 200px;
+  height: 200px;
+}
+  
+  
+button {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+  
+.SignUpButton{
+  background-color: rgb(15, 15, 180) ;
+  color: #fff;
+}
+
+.SignInButton {
+  background-color: #ccc;
+  color: #333;
+}
+
+

@@ -4,7 +4,7 @@ import './Mypage.css';
 import AtsushiFormal from "../img/AtsushiFormal.png";
 import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
-import Header from '../views/Header';
+import MypageHeader from '../views/MypageHeader';
 import Nav from '../views/Nav';
 
 // SNSロゴ素材はinstagramのもので代用,iタグ使うという案もある
@@ -24,7 +24,7 @@ const FormalPage: React.FC = () => {
   return (
     <div className="page formal">
       {/* ページのコンテンツ */}
-      <Header />
+      <MypageHeader title="Casual" />
       <div className="profile">
         <div className="profile_image">
           <img src={AtsushiFormal} alt="Formal Profile" />

@@ -7,7 +7,6 @@ const SettingPassword: React.FC = () => {
 
   return (
     <div className="setting-password">
-      <div className="logo">S-Hub</div>
       <div className="form-group">
         <label htmlFor="password">Password</label>
         <input type="password" id="password" />
@@ -16,7 +15,7 @@ const SettingPassword: React.FC = () => {
       </div>
       <div className="form-actions">
         <button onClick={() => navigate('/verification')}>Back</button>
-        <button onClick={() => navigate('/account-setup')}>Go</button>
+        <button onClick={() => navigate('/sign-in')}>Go</button>
       </div>
     </div>
   );

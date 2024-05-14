@@ -1,59 +1,68 @@
-// CasualPage.tsx
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Mypage.css';
+import AtsushiCasual from "../img/AtsushiCasual.png";
+import { useSelector } from 'react-redux';
+import { RootState } from '../Redux/store';
+import MypageHeader from '../views/MypageHeader';
+import Nav from '../views/Nav';
 
 const CasualPage: React.FC = () => {
+  const navigate = useNavigate();
+  const { profileImg, profileName, profileText, bio, phone, email, socialLinks } = useSelector(
+    (state: RootState) => state.settings
+  );
+
   return (
     <div className="page casual">
       {/* ページのコンテンツ */}
-      <header>
-        <h1>My Page: <span>Casual</span></h1>
-        <div className="s-hub">S-Hub</div>
-      </header>
+      <MypageHeader title="Casual" />
       <div className="profile">
-        <img src="path/to/formal_profile_image.jpg" alt="Formal Profile" />
-        <h2>Atsushi Okamoto</h2>
-        <p>Kyoto University</p>
-        <p>Social Informatics Course</p>
+        <div className="profile_image">
+          <img src={AtsushiCasual} alt="Casual Profile" />
+          {/* 今はそれっぽく見えるようにあつしの画像を入れてるけど、バックエンドAPIと通信できたら{}の中身を{profileImg}に変更してほしい */}
+        </div>
+        <div className="profile_contents">
+          <div className="profile_name">
+            <h2>{profileName}</h2>
+            <h2>Atsushi Okamoto</h2> {/*消去*/}
+          </div>
+          <div className="profile_text">
+            <p>{profileText}</p>
+            <p>Kyoto University<br />Social Informatics Course</p>{/*消去*/}
+          </div>
+        </div>
+      </div>
+      <div className="Bio">
+        <h5>Bio</h5>
+        <p>{bio}</p>
+        <p>CasualBioCasualBioCasualBioCasualBio...</p> {/*消去*/}
       </div>
       <div className="contact">
-        <a href="tel:+819012345678">
+        <a href={`tel:${phone}`}>
           <i className="fa fa-phone"></i>
-          +81 90-1234-5678
+          +81 90-1234-5678 {/*消去*/}
         </a>
-        <a href="mailto:formal@example.com">
+        <a href={`mailto:${email}`}>
           <i className="fa fa-envelope"></i>
-          formal@example.com
+          casual@example.com {/*消去*/}
         </a>
       </div>
       <div className="links">
-        <a href="https://www.facebook.com/formal">
-          <i className="fab fa-facebook"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/formal">
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a href="https://formal.example.com">
-          <i className="fas fa-times"></i>
-        </a>
-        <a href="https://github.com/formal">
-          <i className="fab fa-github"></i>
-        </a>
-        <a href="https://formal.example.com/blog">
-          <i className="fas fa-rss"></i>
-        </a>
+        {Object.entries(socialLinks).map(([platform, url]) => {
+          if (url) {
+            return (
+              <div key={platform} className="link">
+                <a href={url} target="_blank" rel="noopener noreferrer">
+                  <img src={`/${platform}logo.png`} alt={`${platform} logo`} />
+                </a>
+              </div>
+            );
+          }
+          return null;
+        })}
       </div>
-      <nav>
-        <a href="#">
-          <i className="fas fa-home"></i>
-        </a>
-        <a href="#">
-          <i className="fas fa-plane"></i>
-        </a>
-        <a href="#">
-          <i className="fas fa-cog"></i>
-        </a>
-      </nav>
+      <Nav />
     </div>
   );
 };

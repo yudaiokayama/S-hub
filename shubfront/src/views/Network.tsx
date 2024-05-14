@@ -8,38 +8,38 @@ const Network: React.FC = () => {
     <div className="network">
       <body>
         <header>
-          <div class="header-left">Network</div>
-          <div class="header-right">S-Hub</div>
+          <div className="header-left">Network</div>
+          <div className="header-right">S-Hub</div>
         </header>
         <main>
-          <div class="user-list">
-            <div class="user-item">
-              <div class="user-icon"></div>
-              <div class="user-name">User Name</div>
+          <div className="user-list">
+            <div className="user-item">
+              <div className="user-icon"></div>
+              <div className="user-name">User Name</div>
             </div>
-            <div class="user-item">
-              <div class="user-icon"></div>
-              <div class="user-name">User Name</div>
+            <div className="user-item">
+              <div className="user-icon"></div>
+              <div className="user-name">User Name</div>
             </div>
-            <div class="user-item">
-              <div class="user-icon"></div>
-              <div class="user-name">User Name</div>
+            <div className="user-item">
+              <div className="user-icon"></div>
+              <div className="user-name">User Name</div>
             </div>
-            <div class="user-item">
-              <div class="user-icon"></div>
-              <div class="user-name">User Name</div>
+            <div className="user-item">
+              <div className="user-icon"></div>
+              <div className="user-name">User Name</div>
             </div>
-            <div class="user-item">
-              <div class="user-icon"></div>
-              <div class="user-name">User Name</div>
+            <div className="user-item">
+              <div className="user-icon"></div>
+              <div className="user-name">User Name</div>
             </div>
           </div>
         </main>
         <footer>
-          <div class="footer-item">My Page</div>
-          <div class="footer-item">Search</div>
-          <div class="footer-item">Network</div>
-          <div class="footer-item">Settings</div>
+          <div className="footer-item">My Page</div>
+          <div className="footer-item">Search</div>
+          <div className="footer-item">Network</div>
+          <div className="footer-item">Settings</div>
         </footer>
       </body>
     </div>
