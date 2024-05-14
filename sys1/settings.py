@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     #'api.apps.SnsApiConfig',    #API用のアプリディレクトリ
     'rest_framework',
     'log',
+    'main'
+    'react_app'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,9 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'log.auth.CSVBackend',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ]
+}

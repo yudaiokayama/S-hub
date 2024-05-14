@@ -17,7 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from main import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('log/', include('django.contrib.auth.urls')),
+    path('react_app/', include('react_app.urls')),
+    path('main/', include('main.urls')),
 ]
