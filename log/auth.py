@@ -1,5 +1,6 @@
 import csv
 from django.contrib.auth.models import User
+import pandas as pd
 
 class CSVBackend(object):
     def authenticate(self, request, username=None, password=None):
@@ -17,3 +18,10 @@ class CSVBackend(object):
             return User.objects.get(pk=user_id)
         except User.DoesNotExist:
             return None
+        
+
+
+def get_users_from_csv(csv_path):
+    users = pd.read_csv(csv_path, usecols=['phone', 'password'])
+    return users.to_dict('records')
+

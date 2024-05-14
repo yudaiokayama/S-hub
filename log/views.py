@@ -1,22 +1,27 @@
-from django.shortcuts import render
+# views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.models import User
+from auth import get_users_from_csv
 
-from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
+class LoginView(APIView):
+    def post(self, request):
+        phone = request.data.get('phone')
+        password = request.data.get('password')
 
-def login_view(request):
-    if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect('home')  # ログイン後にリダイレクトするURL名を指定します
-        else:
-            # ログイン失敗時の処理を記述します
-            pass
-    return render(request, 'login.html')
-
-def logout_view(request):
-    logout(request)
-    return redirect('login')  # ログアウト後にリダイレクトするURL名を指定します
+        users = get_users_from_csv('users.csv')
+        try:
+            user = next(u for u in users if u['phone'] == phone and u['password'] == password)
+            refresh = RefreshToken.for_user(User(username=user['phone']))
+            
+            # セッションにリフレッシュトークンを設定
+            request.session['refresh_token'] = str(refresh)
+            
+            return Response({
+                'username': user['phone'],
+                'access_token': str(refresh.access_token)
+            })
+        except:
+            return Response({'error': 'Invalid credentials'}, status=400)
 

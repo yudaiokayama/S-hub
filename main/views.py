@@ -6,6 +6,8 @@ from rest_framework.response import Response
 from .models import Profile
 from collections import OrderedDict
 import csv
+from rest_framework.permissions import IsAuthenticated
+
 
 # class ExportProfilesView(APIView):
 #     def get(self, request, *args, **kwargs):
@@ -34,6 +36,7 @@ import csv
         #         })
                 
         # return Response({'message': 'Profiles exported successfully'})
+
 
 class SettingsView(APIView):
     def post(self, request):
@@ -68,6 +71,8 @@ class SettingsView(APIView):
         return Response({'message': 'Profile data saved'})
 
 class ProfilesView(APIView):
+    permission_classes = [IsAuthenticated]
+    
     def get(self, request, user_id):
         filename = f'profiles_{user_id}.csv'
         profiles = []
