@@ -1,0 +1,21 @@
+.splash{
+  width: 100%;
+  max-width: 600px;
+  height: 100%;
+  min-height: 850px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.splash img{
+  width: 200px;
+  height: 200px;
+}
+

@@ -2,6 +2,7 @@
 .page {
     width: 100%;
     max-width: 600px;
+    min-height: 700px;
     margin: 0 auto;
     padding: 20px;
     box-sizing: border-box;
@@ -10,6 +11,26 @@
     border-radius: 10px;
     overflow: hidden;
   }
+
+  .page-container {
+    width: 100%;
+    max-width: 600px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .page-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
   
   
   .page .profile {
@@ -115,20 +136,7 @@
     height: 130px;
   }
   
-  .page nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .page nav a {
-    font-size: 24px;
-    color: #333333;
-    text-decoration: none;
-  }
+
   
   .formal header h1 span{
     background-color: blue;
@@ -143,3 +151,19 @@
     color: #333333;
   }
 
+
+  .qr-button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 20px auto;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+ 
+  

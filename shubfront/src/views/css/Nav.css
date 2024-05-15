@@ -4,8 +4,13 @@ nav {
     justify-content: space-around;
     align-items: center;
     background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    background-color: #ffffff;
   }
   
   nav button {

@@ -4,8 +4,9 @@ import './Mypage.css';
 import AtsushiFormal from "../img/AtsushiFormal.png";
 import { useSelector } from 'react-redux';
 import { RootState } from '../Redux/store';
-import Header from '../views/Header';
+import MypageHeader from '../views/MypageHeader';
 import Nav from '../views/Nav';
+import QRButton from '../components/QR_button';
 
 // SNSロゴ素材はinstagramのもので代用,iタグ使うという案もある
 import instagramlogo from "../img/instagramlogo.png";
@@ -22,24 +23,26 @@ const FormalPage: React.FC = () => {
     (state: RootState) => state.settings
   );
   return (
-    <div className="page formal">
+    <div className="page formal page-container">
       {/* ページのコンテンツ */}
-      <Header />
-      <div className="profile">
-        <div className="profile_image">
-          <img src={AtsushiFormal} alt="Formal Profile" />
-          {/* 今はそれっぽく見えるようにあつしの画像を入れてるけど、バックエンドAPIと通信できたら{}の中身を{profileImg}に変更してほしい */}
-        </div>
-        <div className = "profile_contents">
-          <div className = "profile_name">
-            <h2>{profileName}</h2>
-            <h2>Atsushi Okamoto</h2> {/*消去*/}
+      <MypageHeader mode="Formal" />
+      <div className="page-contents">
+        <div className="profile">
+          <div className="profile_image">
+            <img src={AtsushiFormal} alt="Formal Profile" />
+            {/* 今はそれっぽく見えるようにあつしの画像を入れてるけど、バックエンドAPIと通信できたら{}の中身を{profileImg}に変更してほしい */}
           </div>
-          <div className = "profile_text">
-            <p>{profileText}</p>
-            <p>Kyoto University<br></br>Social Informatics Course</p>{/*消去*/}
+          <div className = "profile_contents">
+            <div className = "profile_name">
+              <h2>{profileName}</h2>
+              <h2>Atsushi Okamoto</h2> {/*消去*/}
+            </div>
+            <div className = "profile_text">
+              <p>{profileText}</p>
+              <p>Kyoto University<br></br>Social Informatics Course</p>{/*消去*/}
+            </div>
           </div>
-        </div>
+        </div> 
       </div>
       <div className="Bio">
         <h5>Bio</h5>
@@ -98,7 +101,9 @@ const FormalPage: React.FC = () => {
           }
           return null;
         })}
-
+      </div>
+      <div className="QRbutton">
+        <QRButton mode="Formal" />
       </div>
       <Nav />
     </div>

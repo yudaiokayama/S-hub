@@ -1,0 +1,131 @@
+/* Page.css */
+.page {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+  .page .profile {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .profile_image{
+    margin-right: 30px;
+    
+  }
+  
+  .page .profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .page .profile h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin: 0;
+  }
+  
+  .page .profile p {
+    font-size: 16px;
+    color: #666666;
+    margin: 5px 0;
+  }
+  
+  .page .contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 30px 0;
+  }
+  
+  .page .contact a {
+    display: flex;
+    align-items: center;
+    color: #333333;
+    text-decoration: none;
+    margin: 0 10px;
+
+  }
+  
+  .page .contact a i {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+  
+  .page .Bio {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .Bio h5{
+    margin: 0;
+  }
+  .page .Bio p{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px;
+  }
+  
+  .link {
+    flex-basis: calc(33.33% - 10px);
+    max-width: calc(33.33% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .link a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .link img {
+    width: 130px;
+    height: 130px;
+  }
+
+  
+  .formal header h1 span{
+    background-color: blue;
+  }
+  
+  .casual header h1 span{
+    background-color: orange;
+
+  }
+  
+  .casual header h1 {
+    color: #333333;
+  }
+

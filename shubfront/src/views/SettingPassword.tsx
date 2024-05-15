@@ -1,13 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/SettingPassword.css';
+import Header from './Header';
 
 const SettingPassword: React.FC = () => {
   const navigate = useNavigate();
 
   return (
     <div className="setting-password">
-      <div className="logo">S-Hub</div>
+      <Header title="Sign Up" />
       <div className="form-group">
         <label htmlFor="password">Password</label>
         <input type="password" id="password" />
@@ -16,7 +17,7 @@ const SettingPassword: React.FC = () => {
       </div>
       <div className="form-actions">
         <button onClick={() => navigate('/verification')}>Back</button>
-        <button onClick={() => navigate('/account-setup')}>Go</button>
+        <button onClick={() => navigate('/sign-in')}>Go</button>
       </div>
     </div>
   );

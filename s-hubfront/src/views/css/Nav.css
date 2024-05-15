@@ -1,0 +1,64 @@
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px;
+    border-top:#000000;
+    border-top: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  nav button {
+    font-size: 18px;
+    color: #333333;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  nav button:hover {
+    color: #000000;
+    background-color: #f5f5f5;
+  }
+  
+  .MypagesButton,
+  .SearchButton,
+  .NetworkButton,
+  .SettingsButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .MypagesButton::before,
+  .SearchButton::before,
+  .NetworkButton::before,
+  .SettingsButton::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .MypagesButton::before {
+    content: "\f007";
+  }
+  
+  .SearchButton::before {
+    content: "\f002";
+  }
+  
+  .NetworkButton::before {
+    content: "\f0c0";
+  }
+  
+  .SettingsButton::before {
+    content: "\f013";
+  }
+
+  
