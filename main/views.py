@@ -87,3 +87,19 @@ class ProfilesView(APIView):
 
         return JsonResponse(profiles, safe=False)
 
+def get_network(request, user_id):
+    if request.method == 'GET':
+        csv_file = f'user_{user_id}.csv'
+        csv_path = os.path.join('path/to/csv/folder', csv_file)
+        
+        if os.path.exists(csv_path):
+            data = []
+            with open(csv_path, 'r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    data.append(row)
+            return JsonResponse({'csv_data': data})
+        else:
+            return JsonResponse({'error': 'CSV file not found'}, status=404)
+
+
