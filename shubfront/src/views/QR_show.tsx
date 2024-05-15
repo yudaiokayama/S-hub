@@ -28,7 +28,6 @@ const QR_show: React.FC = () => {
   return (
     <div className="qr-page">
       <Header title="QRcode" />
-      <h1>QRcode</h1>
       <h1>{mode === 'Formal' ? 'Formal' : 'Casual'}</h1>
       {qrCodeUrl && <img src={qrCodeUrl} alt="QR Code" className="qr-code" />}
       <button className="scan-button">QRコード読み取り</button>

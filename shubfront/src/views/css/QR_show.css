@@ -40,5 +40,7 @@
   }
   
   .back-button {
-    background-color: #f44336;
+    margin-top: 50px;
+    width: 100px;
+    background-color: rgb(15, 15, 180);
   }
