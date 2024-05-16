@@ -1,27 +1,31 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './css/SignIn.css';
-import Header from './Header';
-import Button from './Button';
+import './css/SettingPassword.css';
+import Header from './Header'; // Assuming you have a Header component
 
-const SignIn: React.FC = () => {
-  const navigate = useNavigate();
-
+const SettingPassword: React.FC = () => {
   return (
-    <div className="sign-in">
-      <Header title="Sign In" />
-      <div className="form-group">
-        <label htmlFor="phoneNumber">Phone Number</label>
-        <input type="text" id="phoneNumber" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" />
-      </div>
-      <div className="form-actions">
-        <Button text="Back" onClick={() => navigate('/sign-up')} />
-        <Button text="Go" onClick={() => navigate('/account-setup')} />
+    <div className="setting-password-container">
+      <div className="setting-password">
+        <div className="header">
+          <Header title="Sign In" /> {/* Update title as needed */}
+        </div>
+        <form>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input type="email" id="email" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input type="password" id="password" />
+          </div>
+          <div className="form-actions">
+            <button type="button">Cancel</button>
+            <button type="submit">Sign In</button>
+          </div>
+        </form>
       </div>
     </div>
   );
 };
 
-export default SignIn;
+export default SettingPassword;

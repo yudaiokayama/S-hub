@@ -1,21 +1,80 @@
-.sign-in {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  label {
-    margin-bottom: 5px;
-  }
-  
-  input {
-    padding: 5px;
-    margin-bottom: 10px;
-  }
+/* SettingPassword.css */
+.setting-password-container {
+  width: 100%;
+  max-width: 600px;
+  min-height: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.setting-password {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering content */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.form-group {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 0.5rem; /* Reduced margin to bring fields closer */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.25rem; /* Adjust margin as needed */
+  font-size: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 50px; /* Add top margin to push it down */
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+button:first-child {
+  background-color: #007bff; /* Blue */
+}
+
+button:last-child {
+  background-color: #0033cc; /* Darker blue */
+}
