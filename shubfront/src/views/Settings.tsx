@@ -4,7 +4,6 @@ import './css/Settings.css';
 import Header from './Header';
 import Nav from './Nav';
 
-// 一意なユーザーIDを生成する関数
 const generateUserId = () => {
   return 'user_' + Math.random().toString(36).substr(2, 9);
 };
@@ -26,11 +25,10 @@ const Settings: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userId = generateUserId(); // ユーザーIDを生成
+    const userId = generateUserId();
     try {
-      // フォームの入力値をバックエンドのAPIに送信する
       await axios.post('/api/settings', {
-        userId, // ユーザーIDを含める
+        userId,
         profileImg,
         profileName,
         profileText,
@@ -48,7 +46,7 @@ const Settings: React.FC = () => {
 
   return (
     <div className="settings">
-      <Header title ="setting" />
+      <Header title="setting" />
       <form onSubmit={handleSubmit}>
         <label>
           Profile Image:
@@ -115,7 +113,7 @@ const Settings: React.FC = () => {
             onChange={(e) => setSocialLinks({ ...socialLinks, huggingface: e.target.value })}
           />
         </label>
-        <button type="submit" className = "settingsButton">Save</button>
+        <button type="submit" className="settingsButton">Save</button>
       </form>
       <Nav />
     </div>
